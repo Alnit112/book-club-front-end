@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
 import { signIn } from "../../services/authService";
 
-const SignIpForm = () => {
+const SignInForm = () => {
     const navigate = useNavigate()
     const [message, setMessage] = useState('')
     const [formData, setFormData] = useState({
@@ -81,4 +81,4 @@ const SignIpForm = () => {
     )
   }
   
-  export default SignIpForm
+  export default SignInForm
