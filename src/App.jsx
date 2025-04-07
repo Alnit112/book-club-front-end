@@ -8,6 +8,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path='/sign-up' element={<SignUpForm />} />
+        <Route path='sign-in' element={<SignInForm />} />
       </Routes>
 
     </>
