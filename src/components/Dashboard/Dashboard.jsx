@@ -9,10 +9,10 @@ const Dashboard = () => {
     useEffect (() => {
         const fetchUser = async () => {
             try {
-                const ffetchedUsers = await userService.index()
-                console.log(ffetchedUsers)
+                const fetchedUsers = await userService.index()
+                console.log(fetchedUsers)
             } catch (err) {
-                console.log(err)
+                console.log(err);
             }
         }
         if (user) fetchUser()
