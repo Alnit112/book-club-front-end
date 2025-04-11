@@ -1,8 +1,9 @@
-import { useParams } from "react-router"
+import { useParams, Link } from "react-router"
 import { useState, useEffect, useContext } from "react"
-import { UserContext} from "../../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 import * as bookService from '../../services/bookService'
 import CommentForm from '../CommentForm/CommentForm';
+import styles from './BookDetails.module.css';
 
 
 const BookDetails = (props) => {
@@ -23,52 +24,55 @@ const BookDetails = (props) => {
 
     const handleAddComment = async (commentFormData) => {
         const newComment = await bookService.createComment(bookId, commentFormData)
-        setBook({...book, comments: [...book.comments, newComment] })
+        console.log(newComment);
+        
+        setBook({ ...book, comments: [...book.comments, newComment] })
     }
+    console.log(book);
 
 
-    if (!book) return <main>Please Wait</main>
-
+    if (!book) return <main className={styles.main}>Please Wait</main>
     return (
-        <main>
-            <section>
-                <header>
-                    <p>
+        <main className={styles.main}>
+            <section className={styles.section}>
+                <header className={styles.header}>
+                    <p className={styles.genreLabel}>
                         {book.genre.toUpperCase()}
                     </p>
-                    <h1>
+                    <h1 className={styles.title}>
                         {book.title}
                     </h1>
-                    <p>
-                      {`${book.author.username} posted this book on 
+                    <p className={styles.authorInfo}>
+                        {`${book.author.username} posted this book on
                       ${new Date(book.createdAt).toLocaleDateString()}`}
                     </p>
                     {book.author._id === user._id && (
-                        <>
-                        <button onClick={() => props.handleDeleteBook(bookId)}
-                        >Remove</button>
-                        </>
+                        <div className={styles.actionButtons}>
+                            <Link className={styles.editLink} to={`/books/${bookId}/edit`}>Edit</Link>
+                            <button 
+                                className={styles.deleteButton}
+                                onClick={() => props.handleDeleteBook(bookId)}
+                            >Remove</button>
+                        </div>
                     )}
                 </header>
-                <p>
+                <p className={styles.bookText}>
                     {book.text}
                 </p>
             </section>
-            <section>
-                <h2>Comments</h2>
+            <section className={styles.commentsSection}>
+                <h2 className={styles.commentsTitle}>Comments</h2>
                 <CommentForm handleAddComment={handleAddComment} />
-
-                {!book.comments.length && <p>no comments</p>}
-
-                {book.comments.map((comment) => (
-                    <article key={comment._id}>
-                        <header>
-                            <p>
-                              {`${comment.author.username} posted this book on 
+                {!book.comments.length && <p className={styles.noComments}>no comments</p>}
+                {book.comments.length > 0 && book.comments.map((comment, idx) => (
+                    <article className={styles.commentArticle} key={idx}>
+                        <header className={styles.commentHeader}>
+                            <p className={styles.commentAuthorInfo}>
+                              {`${comment?.author?.username} posted this book on
                               ${new Date(comment.createdAt).toLocaleDateString()}`}
                             </p>
                         </header>
-                        <p>
+                        <p className={styles.commentText}>
                             {comment.text}
                         </p>
                     </article>

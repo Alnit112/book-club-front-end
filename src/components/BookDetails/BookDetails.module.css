@@ -1,0 +1,98 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .genreLabel {
+    color: darkslategray;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .title {
+    color: navy;
+    font-size: 28px;
+    margin: 10px 0;
+  }
+  
+  .authorInfo {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .actionButtons {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .editLink {
+    background-color: forestgreen;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .deleteButton {
+    background-color: firebrick;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .bookText {
+    line-height: 1.6;
+    color: darkslategray;
+  }
+  
+  .commentsSection {
+    margin-top: 30px;
+  }
+  
+  .commentsTitle {
+    color: navy;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .noComments {
+    color: gray;
+    font-style: italic;
+  }
+  
+  .commentArticle {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .commentHeader {
+    margin-bottom: 10px;
+  }
+  
+  .commentAuthorInfo {
+    color: gray;
+    font-size: 14px;
+  }
+  
+  .commentText {
+    color: darkslategray;
+  }

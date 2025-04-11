@@ -6,8 +6,8 @@ const index = async () => {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       return res.json()
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   };
 
@@ -34,12 +34,14 @@ const index = async () => {
        body: JSON.stringify(bookFormData)
       });
       return res.json()
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
   const createComment = async (bookId, commentFormData) => {
+    console.log(commentFormData);
+    
     try {
       const res = await fetch(`${BASE_URL}/${bookId}/comments`, {
         method: 'POST',
@@ -47,11 +49,11 @@ const index = async () => {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}`,
         'content-type': 'application/json'
        },
-       body: JSON.stringify(bookFormData)
+       body: JSON.stringify(commentFormData)
       });
       return res.json()
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -63,8 +65,24 @@ const index = async () => {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}`,},
       });
       return res.json()
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const update = async (bookId, bookFormData) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${bookId}`, {
+        method: 'PUT',
+
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(bookFormData)
+      });
+      return res.json()
+    } catch (err) {
+      console.log(err)
     }
   }
   
@@ -72,6 +90,8 @@ const index = async () => {
     index,
     show,
     create,
+    createComment,
     deleteBook,
+    update,
   }
   

@@ -1,0 +1,48 @@
+.listMain {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .bookLink {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .bookArticle {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .bookArticle:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bookHeader {
+    margin-bottom: 15px;
+  }
+  
+  .bookTitle {
+    color: navy;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  .bookAuthorInfo {
+    color: gray;
+    font-size: 14px;
+  }
+  
+  .bookPreview {
+    color: darkslategray;
+    line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
