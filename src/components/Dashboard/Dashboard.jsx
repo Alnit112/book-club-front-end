@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { useEffect } from "react";
 import * as userService from "../../services/userService";
 import { UserContext } from "../../contexts/UserContext";
-import { Navigate, useNavigate } from "react-router";
+import { Link } from "react-router";
 import styles from './Dashboard.module.css';
+
 
 const Dashboard = () => {
     const { user } = useContext(UserContext)
@@ -29,6 +30,7 @@ const Dashboard = () => {
                 <li>If you would like to look at all the books that have been posted click the Books button</li>
                 <li>If you are the owner of a Book you can edit it and remove it</li>            
             </ul>
+            <Link className={styles.review} to='/books'>Review books</Link>
         </main>
     )
 }

@@ -28,7 +28,6 @@ const CommentForm = (props) => {
                 required
             />
             <button type="submit">Submit</button>
-
         </form>
     )
 }
