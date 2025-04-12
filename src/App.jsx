@@ -34,9 +34,7 @@ const App = () => {
 
   const handleAddBook = async (bookFormData) => {
     const newBook = await bookService.create(bookFormData)
-
     setBooks([newBook, ...books])
-
     navigate('/books')
   }
 

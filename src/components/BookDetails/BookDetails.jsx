@@ -24,11 +24,9 @@ const BookDetails = (props) => {
 
     const handleAddComment = async (commentFormData) => {
         const newComment = await bookService.createComment(bookId, commentFormData)
-        console.log(newComment);
         
         setBook({ ...book, comments: [...book.comments, newComment] })
     }
-    console.log(book);
 
 
     if (!book) return <main className={styles.main}>Please Wait</main>

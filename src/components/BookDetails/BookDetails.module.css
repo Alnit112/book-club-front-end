@@ -23,7 +23,7 @@
   }
   
   .title {
-    color: navy;
+    color: black;
     font-size: 28px;
     margin: 10px 0;
   }
@@ -67,14 +67,13 @@
   }
   
   .commentsTitle {
-    color: navy;
+    color: black;
     font-size: 22px;
     margin-bottom: 15px;
   }
   
   .noComments {
     color: gray;
-    font-style: italic;
   }
   
   .commentArticle {

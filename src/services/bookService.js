@@ -40,7 +40,6 @@ const index = async () => {
   }
 
   const createComment = async (bookId, commentFormData) => {
-    console.log(commentFormData);
     
     try {
       const res = await fetch(`${BASE_URL}/${bookId}/comments`, {
